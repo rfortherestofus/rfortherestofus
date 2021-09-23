@@ -1,0 +1,25 @@
+Package: rfortherestofus
+Title: Internal R for the Rest of Us package
+Version: 0.0.0.9000
+Authors@R: 
+     c(person(given = "Thomas",
+             family = "Vroylandt",
+             role = c("aut", "cre"),
+             email = "thomas@rfortherestofus.com"),
+      person(given = "David",
+             family = "Keyes",
+             role = "aut",
+             email = "david@rfortherestofus.com"),
+      person(given = "R for the Rest of Us",
+             role = c("cph")))
+Description: This packages contains several function for internal use.
+License: file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Remotes: 
+    emilyriederer/projmgr/tree/next-release
+Imports: 
+    magrittr,
+    projmgr
