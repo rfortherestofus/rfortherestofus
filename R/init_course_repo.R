@@ -3,20 +3,25 @@
 #'
 #' @param repo_name Name of the new repo
 #' @param instructor Github name of the instructor
+#' @param course_release_date Course release date
 #'
 #' @return Issues and milestones written on Github
 #' @export
 #'
 #' @examples
 #' \dontrun{
-#' init_course_repo(repo_name = "course_test", instructor = "tvroylandt")
+#' init_course_repo(repo_name = "course_test", instructor = "tvroylandt", course_release_date = "2021-12-23")
 #' }
 init_course_repo <- function(repo_name,
-                             instructor) {
+                             instructor,
+                             course_release_date = "2022-01-01") {
   # init the ref of the repo
   repo_ref <-
     projmgr::create_repo_ref(repo_owner = "rfortherestofus",
                              repo_name = repo_name)
+
+  # course release date
+  course_release_date <- as.Date("2022-01-01")
 
   # milestones + issues
   milestone_pre_work <-
@@ -50,41 +55,51 @@ init_course_repo <- function(repo_name,
                                           assignees = c(instructor))
                                    ))
 
-  milestone_curriculum <- list(title = "Curriculum Development",
-                               issue = list(
-                                 list(title = "Develop course outline",
-                                      assignees = c(instructor)),
-                                 list(title = "Confirm course outline",
-                                      assignees = c("dgkeyes")),
-                                 list(title = "Develop course slides",
-                                      assignees = c(instructor)),
-                                 list(title = "Review course slides",
-                                      assignees = c("dgkeyes"))
-                               ))
+  milestone_curriculum <- list(
+    title = "Curriculum Development",
+    due_on =  as.character(paste0(course_release_date - 60, "T00:00:00Z")),
+    issue = list(
+      list(title = "Develop course outline",
+           assignees = c(instructor)),
+      list(title = "Confirm course outline",
+           assignees = c("dgkeyes")),
+      list(title = "Develop course slides",
+           assignees = c(instructor)),
+      list(title = "Review course slides",
+           assignees = c("dgkeyes"))
+    )
+  )
 
-  milestone_recording <- list(title = "Recording",
-                              issue = list(
-                                list(title = "Record sample lesson video",
-                                     assignees = c(instructor)),
-                                list(title = "Review sample lesson video",
-                                     assignees = c("dgkeyes")),
-                                list(title = "Record remaining videos	Recording",
-                                     assignees = c(instructor)),
-                                list(title = "Upload videos to shared Google Drive folder",
-                                     assignees = c(instructor))
-                              ))
+  milestone_recording <- list(
+    title = "Recording",
+    due_on = as.character(paste0(course_release_date - 30, "T00:00:00Z")),
+    issue = list(
+      list(title = "Record sample lesson video",
+           assignees = c(instructor)),
+      list(title = "Review sample lesson video",
+           assignees = c("dgkeyes")),
+      list(title = "Record remaining videos	Recording",
+           assignees = c(instructor)),
+      list(title = "Upload videos to shared Google Drive folder",
+           assignees = c(instructor))
+    )
+  )
 
-  milestone_video <- list(title = "Video editing",
-                          issue = list(
-                            list(title = "Edit videos",
-                                 assignees = c("dgkeyes")),
-                            # should change it to Rachel account
-                            list(title = "Review edited videos",
-                                 assignees = c("dgkeyes"))
-                          ))
+  milestone_video <- list(
+    title = "Video editing",
+    due_on = as.character(paste0(course_release_date - 14, "T00:00:00Z")),
+    issue = list(
+      list(title = "Edit videos",
+           assignees = c("dgkeyes")),
+      # should change it to Rachel account
+      list(title = "Review edited videos",
+           assignees = c("dgkeyes"))
+    )
+  )
 
   milestone_marketing <- list(
     title = "Marketing",
+    due_on = as.character(paste0(course_release_date - 7, "T00:00:00Z")),
     issue = list(
       list(title = "Develop course landing page",
            assignees = c("dgkeyes")),

@@ -5,12 +5,14 @@
 \title{Initialize a new course repository
 You should set up the course_repo before in rfortherestofus organization}
 \usage{
-init_course_repo(repo_name, instructor)
+init_course_repo(repo_name, instructor, course_release_date = "2022-01-01")
 }
 \arguments{
 \item{repo_name}{Name of the new repo}
 
 \item{instructor}{Github name of the instructor}
+
+\item{course_release_date}{Course release date}
 }
 \value{
 Issues and milestones written on Github
@@ -21,6 +23,6 @@ You should set up the course_repo before in rfortherestofus organization
 }
 \examples{
 \dontrun{
-init_course_repo(repo_name = "course_test", instructor = "tvroylandt")
+init_course_repo(repo_name = "course_test", instructor = "tvroylandt", course_release_date = "2021-12-23")
 }
 }
