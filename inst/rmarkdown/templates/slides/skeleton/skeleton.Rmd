@@ -1,0 +1,41 @@
+---
+title: "R for the Rest of Us Slides"
+output:
+  xaringan::moon_reader:
+    css: ["style.css", "default"]
+    lib_dir: libs
+    df_print: paged
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: 16:9
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(eval = FALSE, 
+                      warning = FALSE,
+                      message = FALSE,
+                      rows.print = 5)
+```
+
+layout: true
+  
+<div class="rru-footer">
+<span>
+<a href="https://rfortherestofus.com/" target="_blank">
+<img src="images/rru-text-only.svg" style="height: 20px;">
+</a>
+</span>
+</div> 
+
+---
+
+
+## R for the Rest of Us Slides
+
+This file is what a user will see when they select your template. Make sure that you update the fields in the yaml header. In particular you will want to update the `output` field to whatever format your template requires.
+
+This is a good place to demonstrate special features that your template provides. Ideally it should knit out-of-the-box, or at least contain clear instructions as to what needs changing.
+
+Finally, be sure to remove this message!

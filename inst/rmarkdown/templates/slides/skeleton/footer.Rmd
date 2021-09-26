@@ -1,0 +1,7 @@
+<div class="rru-footer">
+<span>
+<a href="https://rfortherestofus.com/" target="_blank">
+<img src="images/rru-text-only.svg" style="height: 20px;">
+</a>
+</span>
+</div> 
