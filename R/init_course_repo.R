@@ -25,7 +25,7 @@ init_course_repo <- function(repo_name,
 
   # milestones + issues
   milestone_pre_work <-
-    list(title = "Pre-work",
+    list(title = "1. Pre-work",
          issue = list(
            list(
              title = "Confirm terms",
@@ -47,7 +47,7 @@ init_course_repo <- function(repo_name,
                 assignees = c("dgkeyes"))
          ))
 
-  milestone_infrastructure <- list(title = "Set up infrastructure",
+  milestone_infrastructure <- list(title = "2. Set up infrastructure",
                                    issue = list(
                                      list(title = "Set up shared Google Drive folder",
                                           assignees = c("dgkeyes")),
@@ -56,8 +56,8 @@ init_course_repo <- function(repo_name,
                                    ))
 
   milestone_curriculum <- list(
-    title = "Curriculum Development",
-    due_on =  as.character(paste0(course_release_date - 60, "T00:00:00Z")),
+    title = "3. Curriculum Development",
+    # due_on =  as.character(paste0(course_release_date - 60, "T00:00:00Z")),
     issue = list(
       list(title = "Develop course outline",
            assignees = c(instructor)),
@@ -71,14 +71,14 @@ init_course_repo <- function(repo_name,
   )
 
   milestone_recording <- list(
-    title = "Recording",
-    due_on = as.character(paste0(course_release_date - 30, "T00:00:00Z")),
+    title = "4. Recording",
+    # due_on = as.character(paste0(course_release_date - 30, "T00:00:00Z")),
     issue = list(
       list(title = "Record sample lesson video",
            assignees = c(instructor)),
       list(title = "Review sample lesson video",
            assignees = c("dgkeyes")),
-      list(title = "Record remaining videos	Recording",
+      list(title = "Record remaining videos",
            assignees = c(instructor)),
       list(title = "Upload videos to shared Google Drive folder",
            assignees = c(instructor))
@@ -86,8 +86,8 @@ init_course_repo <- function(repo_name,
   )
 
   milestone_video <- list(
-    title = "Video editing",
-    due_on = as.character(paste0(course_release_date - 14, "T00:00:00Z")),
+    title = "5. Video editing",
+    # due_on = as.character(paste0(course_release_date - 14, "T00:00:00Z")),
     issue = list(
       list(title = "Edit videos",
            assignees = c("dgkeyes")),
@@ -98,8 +98,8 @@ init_course_repo <- function(repo_name,
   )
 
   milestone_marketing <- list(
-    title = "Marketing",
-    due_on = as.character(paste0(course_release_date - 7, "T00:00:00Z")),
+    title = "6. Marketing",
+    # due_on = as.character(paste0(course_release_date - 7, "T00:00:00Z")),
     issue = list(
       list(title = "Develop course landing page",
            assignees = c("dgkeyes")),
@@ -120,7 +120,7 @@ init_course_repo <- function(repo_name,
         assignees = c(instructor, "dgkeyes")
       )
     ),
-    list(title = "Course release! (email + tweet thread)",
+    list(title = "Course release! (email + tweet thread + LinkedIn post)",
          assignees = c("dgkeyes"))
   )
 
