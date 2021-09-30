@@ -25,4 +25,6 @@ Imports:
     magick,
     magrittr,
     projmgr,
-    stringr
+    purrr,
+    stringr,
+    tidycensus

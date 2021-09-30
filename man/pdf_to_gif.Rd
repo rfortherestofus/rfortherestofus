@@ -18,7 +18,7 @@ pdf_to_gif(
 
 \item{gif_file_name}{You must include .gif at end}
 
-\item{density}{}
+\item{density}{Affects file size of GIF that is outputted}
 }
 \value{
 
