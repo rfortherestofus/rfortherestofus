@@ -13,15 +13,32 @@
 #' init_course_repo(repo_name = "course_test", instructor = "tvroylandt", course_release_date = "2021-12-23")
 #' }
 init_course_repo <- function(repo_name,
-                             instructor,
+                             instructor = "tvroylandt",
                              course_release_date = "2022-01-01") {
   # init the ref of the repo
   repo_ref <-
     projmgr::create_repo_ref(repo_owner = "rfortherestofus",
-                             repo_name = repo_name)
+                             repo_name = "course_test")
 
   # course release date
   course_release_date <- as.Date("2022-01-01")
+
+  df_course_issues <- googlesheets4::read_sheet("https://docs.google.com/spreadsheets/d/1iIX8pGBpyePUVI1iiy89e6pDqrNFa_RXZkRVuB4vjA0/", sheet = "Issues")
+
+  df_course_milestones <- googlesheets4::read_sheet("https://docs.google.com/spreadsheets/d/1iIX8pGBpyePUVI1iiy89e6pDqrNFa_RXZkRVuB4vjA0/", sheet = "Milestones")
+
+
+plan2<- df_course_issues %>%
+  rename(title = Issue,
+         assignees = `Assigned To`) %>%
+  mutate(assignees = "tvroylandt") %>%
+  group_by(Milestone) %>%
+  nest() %>%
+  mutate(data= map(data, transpose)) %>%
+  rename(issue = data) %>%
+  ungroup() %>%
+  rename(title = Milestone) %>%
+  transpose()
 
   # milestones + issues
   milestone_pre_work <-
@@ -118,10 +135,10 @@ init_course_repo <- function(repo_name,
       list(
         title = "Review all material on website",
         assignees = c(instructor, "dgkeyes")
-      )
-    ),
-    list(title = "Course release! (email + tweet thread + LinkedIn post)",
-         assignees = c("dgkeyes"))
+      ),
+      list(title = "Course release! (email + tweet thread + LinkedIn post)",
+           assignees = c("dgkeyes"))
+    )
   )
 
 
@@ -136,5 +153,5 @@ init_course_repo <- function(repo_name,
   )
 
   # post plan
-  projmgr::post_plan(repo_ref, plan)
+  projmgr::post_plan(repo_ref, plan2)
 }
