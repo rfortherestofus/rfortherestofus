@@ -22,4 +22,8 @@ Remotes:
     emilyriederer/projmgr/tree/next-release
 Imports: 
     magrittr,
-    projmgr
+    projmgr,
+    googlesheets4,
+    dplyr,
+    tidyr,
+    purrr

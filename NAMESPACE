@@ -2,4 +2,6 @@
 
 export("%>%")
 export(init_course_repo)
+import(dplyr)
+import(tidyr)
 importFrom(magrittr,"%>%")
