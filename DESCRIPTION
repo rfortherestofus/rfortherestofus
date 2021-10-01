@@ -25,6 +25,9 @@ Imports:
     magick,
     magrittr,
     projmgr,
+    googlesheets4,
+    dplyr,
+    tidyr,
     purrr,
     stringr,
     tidycensus
