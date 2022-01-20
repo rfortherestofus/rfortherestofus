@@ -21,6 +21,7 @@ RoxygenNote: 7.1.1
 Remotes: 
     emilyriederer/projmgr/tree/next-release
 Imports: 
+    googledrive,
     here,
     magick,
     magrittr,
