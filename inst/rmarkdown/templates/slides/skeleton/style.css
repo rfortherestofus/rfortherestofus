@@ -20,11 +20,16 @@ body {
 .remark-slide-content h1 {
   font-size: 55px;
 }
+
 .remark-slide-content h2 {
   font-size: 50px;
 }
 .remark-slide-content h3 {
   font-size: 40px;
+}
+
+.middle h1, .middle h2, .middle h3, .middle h4, .middle h5 {
+  font-size: 75px;
 }
 
 .xl {
