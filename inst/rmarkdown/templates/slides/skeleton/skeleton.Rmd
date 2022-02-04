@@ -19,23 +19,26 @@ knitr::opts_chunk$set(eval = FALSE,
                       rows.print = 5)
 ```
 
-layout: true
-  
-<div class="rru-footer">
-<span>
-<a href="https://rfortherestofus.com/" target="_blank">
-<img src="images/rru-text-only.svg" style="height: 20px;">
-</a>
-</span>
-</div> 
-
----
-
 
 ## R for the Rest of Us Slides
 
 This file is what a user will see when they select your template. Make sure that you update the fields in the yaml header. In particular you will want to update the `output` field to whatever format your template requires.
-
+j
 This is a good place to demonstrate special features that your template provides. Ideally it should knit out-of-the-box, or at least contain clear instructions as to what needs changing.
 
 Finally, be sure to remove this message!
+
+---
+
+class: inverse, center, middle
+
+## Sample Inverse
+
+---
+
+class: my-turn
+
+## Sample My Turn
+
+Exercitation consectetur sit excepteur cillum ad irure labore pariatur incididunt. Esse enim mollit velit nulla eiusmod consectetur occaecat laborum excepteur eu laborum enim pariatur do. Eiusmod exercitation minim incididunt nisi Lorem. Consectetur irure laboris est id aliquip Lorem. Minim et minim tempor ut aute minim. Velit non officia nisi proident enim sint. Nisi irure eu reprehenderit duis laboris amet velit velit consectetur magna quis. Veniam quis incididunt do non ipsum. Ut deserunt dolore sint aliquip ex deserunt eiusmod cillum ut. Qui sit officia in voluptate officia qui enim eiusmod id dolor incididunt est.
+
