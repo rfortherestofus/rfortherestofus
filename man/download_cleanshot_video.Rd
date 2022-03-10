@@ -4,7 +4,7 @@
 \alias{download_cleanshot_video}
 \title{Download video from Cleanshot}
 \usage{
-download_cleanshot_video(cleanshot_url, file_name)
+download_cleanshot_video(cleanshot_url)
 }
 \arguments{
 \item{file_name}{}
