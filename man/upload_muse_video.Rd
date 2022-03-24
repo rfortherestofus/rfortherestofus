@@ -4,7 +4,7 @@
 \alias{upload_muse_video}
 \title{Upload video to muse.ai}
 \usage{
-upload_muse_video(local_video, video_title)
+upload_muse_video(local_video, video_title = NULL)
 }
 \arguments{
 \item{local_video}{Location of local video}
