@@ -7,7 +7,7 @@
 #' @export
 #'
 #' @examples
-upload_muse_video <- function(local_video, video_title) {
+upload_muse_video <- function(local_video, video_title = NULL) {
 
   uploaded_video_info <- httr2::request("https://muse.ai/api/files/upload") %>%
     httr2::req_headers("Key" = Sys.getenv("MUSE_API_KEY")) %>%
@@ -20,12 +20,25 @@ upload_muse_video <- function(local_video, video_title) {
     dplyr::mutate(video_id = stringr::str_glue("https://muse.ai/api/files/set/{fid}")) %>%
     dplyr::pull(video_id)
 
-  httr2::request(latest_video_id) %>%
-    httr2::req_headers("Key" = Sys.getenv("MUSE_API_KEY"),
-                       "Content-Type" = "application/json") %>%
-    httr2::req_body_json(list(title = video_title,
-                              visibility = "unlisted")) %>%
-    httr2::req_perform()
+  if (is.null(video_title)) {
+
+    httr2::request(latest_video_id) %>%
+      httr2::req_headers("Key" = Sys.getenv("MUSE_API_KEY"),
+                         "Content-Type" = "application/json") %>%
+      httr2::req_body_json(list(visibility = "unlisted")) %>%
+      httr2::req_perform()
+
+
+  } else {
+
+    httr2::request(latest_video_id) %>%
+      httr2::req_headers("Key" = Sys.getenv("MUSE_API_KEY"),
+                         "Content-Type" = "application/json") %>%
+      httr2::req_body_json(list(title = video_title,
+                                visibility = "unlisted")) %>%
+      httr2::req_perform()
+
+  }
 
 }
 
