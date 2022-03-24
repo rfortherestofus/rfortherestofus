@@ -51,21 +51,47 @@ upload_muse_video <- function(local_video, video_title = NULL) {
 #' @examples
 download_latest_zoom_video <- function() {
 
-  video_file_id <- googledrive::drive_ls("https://drive.google.com/drive/u/1/folders/17dal_vagUUwxDhl-f3gK4PZCHdViXLcN") %>%
-    dplyr::slice(1) %>%
-    dplyr::pull(id)
 
-  video_name <- googledrive::drive_ls("https://drive.google.com/drive/u/1/folders/17dal_vagUUwxDhl-f3gK4PZCHdViXLcN") %>%
-    dplyr::slice(1) %>%
-    dplyr::pull(name)
+  video_details <- googledrive::drive_ls("https://drive.google.com/drive/u/1/folders/17dal_vagUUwxDhl-f3gK4PZCHdViXLcN") %>%
+    dplyr::slice(1)
 
-  video_location <- stringr::str_glue("{tempdir()}{video_name}")
+  video_size <- googledrive::drive_reveal(video_details$id, "size") %>%
+    dplyr::pull(size) %>%
+    as.numeric() %>%
+    utils:::format.object_size("auto")
 
-  googledrive::as_id(video_file_id) %>%
-    googledrive::drive_download(path = video_location,
-                                overwrite = TRUE)
+  message(stringr::str_glue("The most recent file has the name:\n '{video_details$name}' and is  {video_size}."))
 
-  video_location
+  check_download <- readline("Is this the correct file to download? ")
+
+  if(check_download %in% c("n", "N", "no", "No", "NO")){
+
+    print("Download aborted")
+  }
+
+  if(check_download %in% c("y", "Y", "yes", "Yes", "YES")){
+
+    video_file_id <- video_details %>%
+      dplyr::pull(id)
+
+    video_name <- googledrive::drive_ls("https://drive.google.com/drive/u/1/folders/17dal_vagUUwxDhl-f3gK4PZCHdViXLcN") %>%
+      dplyr::slice(1) %>%
+      dplyr::pull(name)
+
+    tmp_dir <- tempdir()
+
+    video_location <- stringr::str_glue("{tmp_dir}{video_name}")
+
+    done <- googledrive::as_id(video_file_id) %>%
+      googledrive::drive_download(path = video_location,
+                                  overwrite = TRUE)
+
+    video_location
+
+  }
+
+
+
 
 }
 
