@@ -32,4 +32,6 @@ Imports:
     tidycensus,
     httr2,
     curl,
-    tibble
+    tibble,
+    jsonlite,
+    tidyselect
