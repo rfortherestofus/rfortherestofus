@@ -3,6 +3,7 @@
 #' rru_colors() enables you to pull colors directly from the RRU palette.
 #' Choose one of the following options:
 #' - primary colors: `Blue`, `Dark Text`, `Light Text`
+#' - additional color: `Orange`, `Yellow`, `Red`
 #'
 #' `rru_colors("Dark Text", "Light Text")` returns the code for both of those
 #' colors. `rru_colours()` returns a named vector of all the RRU hex codes
@@ -17,9 +18,12 @@ rru_colors <- function(...) {
   # @ Cara - please change colors here
   ivac_colors_vector <- c(
     `Blue` = "#6caadd",
-    `Dark Text` = "#314D63",
+    `Dark Text` = "#404E6B",
     `Light Text` = "#8394A1",
-    `Pale Blue` = "#E1EEF8"
+    `Pale Blue` = "#E1EEF8",
+    `Orange` = "#ff7400",
+    `Yellow` = "#ECC94B",
+    `Red` = "#C53030"
   )
 
   cols <- c(...)
