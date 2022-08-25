@@ -16,6 +16,12 @@
     <loc>/index.html</loc>
   </url>
   <url>
+    <loc>/reference/download_cleanshot_video.html</loc>
+  </url>
+  <url>
+    <loc>/reference/download_latest_zoom_video.html</loc>
+  </url>
+  <url>
     <loc>/reference/get_acs_race_ethnicity.html</loc>
   </url>
   <url>
@@ -29,6 +35,12 @@
   </url>
   <url>
     <loc>/reference/pipe.html</loc>
+  </url>
+  <url>
+    <loc>/reference/rru_colors.html</loc>
+  </url>
+  <url>
+    <loc>/reference/theme_rru.html</loc>
   </url>
   <url>
     <loc>/reference/upload_muse_video.html</loc>
