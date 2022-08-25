@@ -6,26 +6,29 @@
 #' @param show_legend Whether or not to show the legend (TRUE by default)
 #' @param base_family Base font family (Inter by default). If you want to use a custom font, you need to register it first.
 #' @param title_family Title font family (Inter by default). If you want to use a custom font, you need to register it first.
+#' @param axis_family Axis text and title font family (Inter by default). If you want to use a custom font, you need to register it first.
 #' @param void logical, use `TRUE` if you want the plot to use theme_void() as its starting point (i.e. when you don't want any axes)
 #'
 #' @return Ggplot2 theme
 #' @export
 
 theme_rru <- function(show_grid_lines = TRUE,
-                       show_legend = TRUE,
-                       base_family = "Inter",
-                       title_family = "Inter",
-                       void = FALSE) {
+                      show_legend = TRUE,
+                      base_family = "Inter",
+                      title_family = "Inter",
+                      axis_family = "Inter",
+                      void = FALSE) {
 
-  rru_theme <- ggplot2::theme_minimal(base_family = base_family) +
+  rru_theme <- ggplot2::theme_minimal(base_family = base_family, base_size = 13) +
     ggplot2::theme(panel.grid.major = ggplot2::element_line(color = alpha(rru_colors("Pale Blue")), 0.5),
                    panel.grid.minor = ggplot2::element_line(color = alpha(rru_colors("Pale Blue")), 0.5),
+                   plot.title.position = "plot",
                    axis.ticks = ggplot2::element_blank(),
-                   axis.text = ggplot2::element_text(color = rru_colors("Light Text"), family = base_family),
-                   axis.title.x = ggplot2::element_text(margin = ggplot2::margin(15, 0, 0, 0)),
-                   axis.title.y = ggplot2::element_text(margin = ggplot2::margin(0, 15, 0, 0)))
+                   axis.text = ggplot2::element_text(color = rru_colors("Light Text"), family = axis_family),
+                   axis.title.x = ggplot2::element_text(margin = ggplot2::margin(15, 0, 0, 0), family = axis_family),
+                   axis.title.y = ggplot2::element_blank())
 
-  if(void == TRUE) {
+  if (void == TRUE) {
     show_legend <- FALSE
     rru_theme <- rru_theme +
       ggplot2::theme_void(base_family = base_family) +
@@ -35,6 +38,7 @@ theme_rru <- function(show_grid_lines = TRUE,
   # Adding formatting for text regardless of void or not
   rru_theme <- rru_theme +
     ggplot2::theme(text = ggplot2::element_text(color =  rru_colors("Light Text"), size = 14),
+                   panel.grid.minor = ggplot2::element_blank(),
                    plot.title = ggtext::element_markdown(family = title_family,
                                                          face = "bold",
                                                          color =  rru_colors("Dark Text"),
@@ -51,8 +55,7 @@ theme_rru <- function(show_grid_lines = TRUE,
   if (show_grid_lines == FALSE) {
 
     rru_theme <- rru_theme +
-      ggplot2::theme(panel.grid.major = ggplot2::element_blank(),
-                     panel.grid.minor = ggplot2::element_blank())
+      ggplot2::theme(panel.grid.major = ggplot2::element_blank())
 
   }
 
