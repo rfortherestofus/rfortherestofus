@@ -17,6 +17,7 @@ rru_colors() enables you to pull colors directly from the RRU palette.
 Choose one of the following options:
 \itemize{
 \item primary colors: \code{Blue}, \verb{Dark Text}, \verb{Light Text}
+\item additional color: \code{Orange}, \code{Yellow}, \code{Red}
 }
 }
 \details{

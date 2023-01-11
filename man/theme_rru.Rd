@@ -9,6 +9,7 @@ theme_rru(
   show_legend = TRUE,
   base_family = "Inter",
   title_family = "Inter",
+  axis_family = "Inter",
   void = FALSE
 )
 }
@@ -21,11 +22,13 @@ theme_rru(
 
 \item{title_family}{Title font family (Inter by default). If you want to use a custom font, you need to register it first.}
 
+\item{axis_family}{Axis text and title font family (Inter by default). If you want to use a custom font, you need to register it first.}
+
 \item{void}{logical, use \code{TRUE} if you want the plot to use theme_void() as its starting point (i.e. when you don't want any axes)}
 }
 \value{
 Ggplot2 theme
 }
 \description{
-Remember to import fonts before using this, for the fonts to be used: rruthemes::import_fonts()!
+Remember to install and import the required fonts ("Inter") before using this!
 }
