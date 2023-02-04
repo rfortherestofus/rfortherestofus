@@ -20,6 +20,19 @@ This is a good place to demonstrate special features that your template provides
 
 Finally, be sure to remove this message!
 
+# Sample Code
+
+```{r}
+#| echo: true
+
+library(tidyverse)
+library(palmerpenguins)
+
+penguins %>% 
+  ggplot(aes(x = bill_length_mm)) +
+  geom_histogram() +
+  theme_minimal()
+```
 
 # Sample Inverse {.inverse}
 
