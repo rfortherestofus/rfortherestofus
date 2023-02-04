@@ -79,12 +79,12 @@ h3.title {
 
 .inverse h1, .title-slide h1 {
   color: $body-bg;
-  line-height: 1;
-  letter-spacing: -2px;
-  text-align: center;
 }
 
 .reveal[data-navigation-mode=linear] .title-slide h1 {
+  line-height: 1;
+  letter-spacing: -2px;
+  text-align: center;
   font-size: $title-h1-font-size;
 }
 
