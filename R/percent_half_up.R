@@ -6,6 +6,7 @@
 #' @inheritParams scales::number
 #'
 #' @return A number function helper
+#' @export
 #'
 #' @importFrom rlang %||%
 number_half_up <-
