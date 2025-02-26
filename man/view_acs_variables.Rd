@@ -9,9 +9,6 @@ view_acs_variables(year = 2019)
 \arguments{
 \item{year}{}
 }
-\value{
-
-}
 \description{
 View all ACS variables
 }

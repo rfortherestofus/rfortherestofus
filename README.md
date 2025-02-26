@@ -49,7 +49,7 @@ this theme.
 ``` r
 library(tidyverse)
 
-palmerpenguins::penguins %>%
+palmerpenguins::penguins |>
   ggplot() +
   geom_point(aes(x = bill_length_mm,
                  y = flipper_length_mm,
@@ -67,7 +67,7 @@ palmerpenguins::penguins %>%
 ![](README_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
 
 ``` r
-palmerpenguins::penguins %>%
+palmerpenguins::penguins |>
   ggplot(aes(x = 1,
              fill = species),
          stat = "count") +

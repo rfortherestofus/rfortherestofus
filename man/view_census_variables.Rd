@@ -9,9 +9,6 @@ view_census_variables(year = 2010)
 \arguments{
 \item{year}{}
 }
-\value{
-
-}
 \description{
 View all Census variables
 }

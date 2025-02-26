@@ -1,5 +1,3 @@
-
-
 # function from https://github.com/r-lib/scales/blob/main/R/label-number.r#L220
 #' Title
 #'
@@ -10,18 +8,18 @@
 #'
 #' @importFrom rlang %||%
 number_half_up <-
-  function(x,
-           accuracy = NULL,
-           scale = 1,
-           prefix = "",
-           suffix = "",
-           big.mark = " ",
-           decimal.mark = ".",
-           trim = TRUE,
-           ...)
-  {
-    if (length(x) == 0)
-      return(character())
+  function(
+    x,
+    accuracy = NULL,
+    scale = 1,
+    prefix = "",
+    suffix = "",
+    big.mark = " ",
+    decimal.mark = ".",
+    trim = TRUE,
+    ...
+  ) {
+    if (length(x) == 0) return(character())
     accuracy <- accuracy %||% precision(x * scale)
     # change here
     x <- round_any(x, accuracy / scale, f = janitor::round_half_up)
@@ -57,16 +55,17 @@ round_any <- function(x, accuracy, f) {
 #' @export
 #'
 percent_half_up <-
-  function (x,
-            accuracy = NULL,
-            scale = 100,
-            prefix = "",
-            suffix = "%",
-            big.mark = " ",
-            decimal.mark = ".",
-            trim = TRUE,
-            ...)
-  {
+  function(
+    x,
+    accuracy = NULL,
+    scale = 100,
+    prefix = "",
+    suffix = "%",
+    big.mark = " ",
+    decimal.mark = ".",
+    trim = TRUE,
+    ...
+  ) {
     number_half_up(
       x = x,
       accuracy = accuracy,
