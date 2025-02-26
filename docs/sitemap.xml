@@ -1,54 +1,27 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>/404.html</loc>
-  </url>
-  <url>
-    <loc>/LICENSE-text.html</loc>
-  </url>
-  <url>
-    <loc>/LICENSE.html</loc>
-  </url>
-  <url>
-    <loc>/authors.html</loc>
-  </url>
-  <url>
-    <loc>/index.html</loc>
-  </url>
-  <url>
-    <loc>/reference/download_cleanshot_video.html</loc>
-  </url>
-  <url>
-    <loc>/reference/download_latest_zoom_video.html</loc>
-  </url>
-  <url>
-    <loc>/reference/get_acs_race_ethnicity.html</loc>
-  </url>
-  <url>
-    <loc>/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>/reference/init_course_repo.html</loc>
-  </url>
-  <url>
-    <loc>/reference/pdf_to_gif.html</loc>
-  </url>
-  <url>
-    <loc>/reference/pipe.html</loc>
-  </url>
-  <url>
-    <loc>/reference/rru_colors.html</loc>
-  </url>
-  <url>
-    <loc>/reference/theme_rru.html</loc>
-  </url>
-  <url>
-    <loc>/reference/upload_muse_video.html</loc>
-  </url>
-  <url>
-    <loc>/reference/view_acs_variables.html</loc>
-  </url>
-  <url>
-    <loc>/reference/view_census_variables.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://rfortherestofus.github.io/rfortherestofus/404.html</loc></url>
+<url><loc>https://rfortherestofus.github.io/rfortherestofus/LICENSE-text.html</loc></url>
+<url><loc>https://rfortherestofus.github.io/rfortherestofus/LICENSE.html</loc></url>
+<url><loc>https://rfortherestofus.github.io/rfortherestofus/authors.html</loc></url>
+<url><loc>https://rfortherestofus.github.io/rfortherestofus/index.html</loc></url>
+<url><loc>https://rfortherestofus.github.io/rfortherestofus/reference/connect_to_statamic_db.html</loc></url>
+<url><loc>https://rfortherestofus.github.io/rfortherestofus/reference/download_latest_zoom_video.html</loc></url>
+<url><loc>https://rfortherestofus.github.io/rfortherestofus/reference/get_acs_race_ethnicity.html</loc></url>
+<url><loc>https://rfortherestofus.github.io/rfortherestofus/reference/get_all_users.html</loc></url>
+<url><loc>https://rfortherestofus.github.io/rfortherestofus/reference/get_course_ids.html</loc></url>
+<url><loc>https://rfortherestofus.github.io/rfortherestofus/reference/get_course_participants.html</loc></url>
+<url><loc>https://rfortherestofus.github.io/rfortherestofus/reference/index.html</loc></url>
+<url><loc>https://rfortherestofus.github.io/rfortherestofus/reference/init_course_repo.html</loc></url>
+<url><loc>https://rfortherestofus.github.io/rfortherestofus/reference/number_half_up.html</loc></url>
+<url><loc>https://rfortherestofus.github.io/rfortherestofus/reference/pdf_to_gif.html</loc></url>
+<url><loc>https://rfortherestofus.github.io/rfortherestofus/reference/percent_half_up.html</loc></url>
+<url><loc>https://rfortherestofus.github.io/rfortherestofus/reference/pipe.html</loc></url>
+<url><loc>https://rfortherestofus.github.io/rfortherestofus/reference/post_course_participants.html</loc></url>
+<url><loc>https://rfortherestofus.github.io/rfortherestofus/reference/post_participant_info.html</loc></url>
+<url><loc>https://rfortherestofus.github.io/rfortherestofus/reference/rru_colors.html</loc></url>
+<url><loc>https://rfortherestofus.github.io/rfortherestofus/reference/theme_rru.html</loc></url>
+<url><loc>https://rfortherestofus.github.io/rfortherestofus/reference/upload_muse_video.html</loc></url>
+<url><loc>https://rfortherestofus.github.io/rfortherestofus/reference/view_acs_variables.html</loc></url>
+<url><loc>https://rfortherestofus.github.io/rfortherestofus/reference/view_census_variables.html</loc></url>
 </urlset>
+

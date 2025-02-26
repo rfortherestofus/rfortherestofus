@@ -28,7 +28,7 @@ Finally, be sure to remove this message!
 library(tidyverse)
 library(palmerpenguins)
 
-penguins %>% 
+penguins |> 
   ggplot(aes(x = bill_length_mm)) +
   geom_histogram() +
   theme_minimal()

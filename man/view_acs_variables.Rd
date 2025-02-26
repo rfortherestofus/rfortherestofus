@@ -4,13 +4,13 @@
 \alias{view_acs_variables}
 \title{View all ACS variables}
 \usage{
-view_acs_variables(year = 2019)
+view_acs_variables(year = 2023)
 }
 \arguments{
 \item{year}{}
 }
 \value{
-
+data frame with all ACS variables
 }
 \description{
 View all ACS variables

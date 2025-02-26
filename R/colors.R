@@ -33,8 +33,7 @@ rru_colors <- function(...) {
   } else {
     cols <- stringr::str_to_title(cols)
 
-    ivac_colors_vector[cols] %>%
+    ivac_colors_vector[cols] |>
       as.vector()
   }
-
 }

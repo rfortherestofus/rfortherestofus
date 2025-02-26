@@ -21,7 +21,7 @@ pdf_to_gif(
 \item{density}{Affects file size of GIF that is outputted}
 }
 \value{
-
+GIF
 }
 \description{
 Convert PDF to Animated GIF

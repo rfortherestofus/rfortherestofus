@@ -4,13 +4,13 @@
 \alias{view_census_variables}
 \title{View all Census variables}
 \usage{
-view_census_variables(year = 2010)
+view_census_variables(year = 2020)
 }
 \arguments{
 \item{year}{}
 }
 \value{
-
+data frame with all Census variables
 }
 \description{
 View all Census variables

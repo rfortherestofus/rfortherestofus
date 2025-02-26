@@ -5,23 +5,20 @@
 #' @param gif_file_name You must include .gif at end
 #' @param density Affects file size of GIF that is outputted
 #'
-#' @return
+#' @return GIF
 #' @export
 #'
-#' @examples
-pdf_to_gif <- function(pdf_location,
-                       gif_file_path = here::here(),
-                       gif_file_name,
-                       density = 50) {
-
-  pdf_doc <- magick::image_read_pdf(pdf_location,
-                                    density = 50)
+pdf_to_gif <- function(
+  pdf_location,
+  gif_file_path = here::here(),
+  gif_file_name,
+  density = 50
+) {
+  pdf_doc <- magick::image_read_pdf(pdf_location, density = 50)
 
   gif_file_name_and_path <- stringr::str_glue("{gif_file_path}/{gif_file_name}")
 
-  pdf_doc %>%
-    magick::image_animate(fps = 0.5) %>%
+  pdf_doc |>
+    magick::image_animate(fps = 0.5) |>
     magick::image_write(path = gif_file_name_and_path)
-
 }
-
