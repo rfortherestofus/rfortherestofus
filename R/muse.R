@@ -3,10 +3,8 @@
 #' @param local_video Location of local video
 #' @param video_title What to call video on muse
 #'
-#' @return
+#' @return Uploads video to Muse
 #' @export
-#'
-#' @examples
 upload_muse_video <- function(local_video, video_title = NULL) {
   uploaded_video_info <- httr2::request("https://muse.ai/api/files/upload") |>
     httr2::req_headers("Key" = Sys.getenv("MUSE_API_KEY")) |>
@@ -48,8 +46,6 @@ upload_muse_video <- function(local_video, video_title = NULL) {
 #'
 #' @return Returns location of video
 #' @export
-#'
-#' @examples
 download_latest_zoom_video <- function() {
   video_details <- googledrive::drive_ls(
     "https://drive.google.com/drive/u/1/folders/17dal_vagUUwxDhl-f3gK4PZCHdViXLcN"

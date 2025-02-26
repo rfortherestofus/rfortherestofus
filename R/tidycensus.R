@@ -4,8 +4,6 @@
 #'
 #' @return data frame with race/ethnicity data
 #' @export
-#'
-#' @examples
 get_acs_race_ethnicity <- function(...) {
   tidycensus::get_acs(
     ...,
@@ -35,11 +33,9 @@ get_acs_race_ethnicity <- function(...) {
 #'
 #' @param year
 #'
-#' @return
+#' @return data frame with all ACS variables
 #' @export
-#'
-#' @examples
-view_acs_variables <- function(year = 2019) {
+view_acs_variables <- function(year = 2023) {
   tidycensus::load_variables(year, "acs5", cache = TRUE) |>
     tibble::view()
 }
@@ -49,11 +45,9 @@ view_acs_variables <- function(year = 2019) {
 #'
 #' @param year
 #'
-#' @return
+#' @return data frame with all Census variables
 #' @export
-#'
-#' @examples
-view_census_variables <- function(year = 2010) {
+view_census_variables <- function(year = 2020) {
   tidycensus::load_variables(year, "sf1", cache = TRUE) |>
     tibble::view()
 }

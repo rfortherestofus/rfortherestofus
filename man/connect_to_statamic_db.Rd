@@ -6,6 +6,9 @@
 \usage{
 connect_to_statamic_db()
 }
+\value{
+DB connection
+}
 \description{
 Connect to Statamic Database
 }

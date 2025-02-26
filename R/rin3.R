@@ -2,9 +2,7 @@
 
 #' Connect to Statamic Database
 #'
-#' @returns
-#'
-#' @examples
+#' @returns DB connection
 connect_to_statamic_db <- function() {
   con <-
     DBI::dbConnect(
@@ -20,9 +18,7 @@ connect_to_statamic_db <- function() {
 
 #' Get all users from DB
 #'
-#' @returns
-#'
-#' @examples
+#' @returns all users
 get_all_users <- function() {
   dplyr::tbl(connect_to_statamic_db(), "users") |>
     dplyr::collect()
@@ -32,9 +28,7 @@ get_all_users <- function() {
 #'
 #' @param course_title Title of course (or string to find multiple courses such as "R in 3 Months")
 #'
-#' @returns
-#'
-#' @examples
+#' @returns ids of courses
 get_course_ids <- function(course_title) {
   statamicr::get_collection_list(
     "https://rfortherestofus.com",
@@ -49,10 +43,8 @@ get_course_ids <- function(course_title) {
 #'
 #' @param course_title Title of course (or string to find multiple courses such as "R in 3 Months")
 #'
-#' @returns
+#' @returns All participants in course(s)
 #' @export
-#'
-#' @examples
 get_course_participants <- function(course_title) {
   get_all_users() |>
     dplyr::filter(stringr::str_detect(email, "rfortherestofus.com", negate = TRUE)) |>
@@ -67,23 +59,27 @@ get_course_participants <- function(course_title) {
     dplyr::mutate(last_name = stringr::str_to_title(last_name)) |>
     tidyr::separate_longer_delim(viewed_lessons, delim = ", ") |>
     dplyr::add_count(email, name = "number_of_lessons_viewed") |>
-    dplyr::distinct(email, .keep_all = TRUE)
+    dplyr::group_by(email) |>
+    dplyr::slice_max(
+      order_by = number_of_lessons_viewed,
+      n = 1,
+      with_ties = FALSE
+    ) |>
+    dplyr::ungroup()
 }
 
 # Post Participants to Google Sheet --------------------------------------
 
-#' Title
+#' Post participants in a course or courses to a Google Sheet
 #'
 #' @param course_title Title of course (or string to find multiple courses such as "R in 3 Months")
 #' @param google_sheets_url URL of Google Sheet to post to
 #' @param sheet_name Name of sheet to post to
 #' @param view_sheet Whether to open sheet in browser (TRUE by default)
 #'
-#' @returns
+#' @returns Posts participant info to Google Sheet
 #' @export
-#'
-#' @examples
-post_participant_info <- function(course_title, google_sheets_url, sheet_name, view_sheet = TRUE) {
+post_course_participants <- function(course_title, google_sheets_url, sheet_name, view_sheet = TRUE) {
   googlesheets4::gs4_auth(email = Sys.getenv("GOOGLE_SHEETS_EMAIL"))
 
   get_course_participants(course_title) |>
@@ -99,8 +95,9 @@ post_participant_info <- function(course_title, google_sheets_url, sheet_name, v
       number_of_lessons_viewed
     ) |>
     dplyr::arrange(last_name) |>
-    googlesheets4::range_write(
-      ss = google_sheets_url
+    googlesheets4::sheet_write(
+      ss = google_sheets_url,
+      sheet = sheet_name
     )
 
   cli::cli_alert_success(stringr::str_glue("Participant info posted at {google_sheets_url}"))
@@ -109,5 +106,3 @@ post_participant_info <- function(course_title, google_sheets_url, sheet_name, v
     browseURL(google_sheets_url)
   }
 }
-
-

@@ -11,6 +11,9 @@ upload_muse_video(local_video, video_title = NULL)
 
 \item{video_title}{What to call video on muse}
 }
+\value{
+Uploads video to Muse
+}
 \description{
 Upload video to muse.ai
 }

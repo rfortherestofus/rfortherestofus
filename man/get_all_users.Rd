@@ -6,6 +6,9 @@
 \usage{
 get_all_users()
 }
+\value{
+all users
+}
 \description{
 Get all users from DB
 }

@@ -9,6 +9,9 @@ get_course_participants(course_title)
 \arguments{
 \item{course_title}{Title of course (or string to find multiple courses such as "R in 3 Months")}
 }
+\value{
+All participants in course(s)
+}
 \description{
 Get all participants in a course or courses
 }

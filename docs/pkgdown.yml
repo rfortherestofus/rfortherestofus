@@ -1,6 +1,8 @@
-pandoc: '2.18'
-pkgdown: 2.0.3
+pandoc: '3.5'
+pkgdown: 2.1.1
 pkgdown_sha: ~
 articles: {}
-last_built: 2022-08-25T21:15Z
-
+last_built: 2025-02-26T01:13Z
+urls:
+  reference: https://rfortherestofus.github.io/rfortherestofus/reference
+  article: https://rfortherestofus.github.io/rfortherestofus/articles

@@ -5,10 +5,9 @@
 #' @param gif_file_name You must include .gif at end
 #' @param density Affects file size of GIF that is outputted
 #'
-#' @return
+#' @return GIF
 #' @export
 #'
-#' @examples
 pdf_to_gif <- function(
   pdf_location,
   gif_file_path = here::here(),

@@ -36,7 +36,10 @@ Imports:
     jsonlite,
     tidyselect,
     DBI,
-    statamicr,
+    statamicr (>= 0.0.0.9000),
     RMySQL,
-    cli
+    cli,
+    remotes
 URL: https://rfortherestofus.github.io/rfortherestofus/
+Remotes:  
+    rfortherestofus/statamicr

@@ -9,6 +9,9 @@ get_course_ids(course_title)
 \arguments{
 \item{course_title}{Title of course (or string to find multiple courses such as "R in 3 Months")}
 }
+\value{
+ids of courses
+}
 \description{
 Get course ids
 }
