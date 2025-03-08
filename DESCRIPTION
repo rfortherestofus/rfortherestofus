@@ -39,7 +39,8 @@ Imports:
     statamicr (>= 0.0.0.9000),
     RMySQL,
     cli,
-    remotes
+    remotes,
+    lubridate
 URL: https://rfortherestofus.github.io/rfortherestofus/
-Remotes:  
+Remotes: 
     rfortherestofus/statamicr
