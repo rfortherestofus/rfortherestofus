@@ -49,7 +49,7 @@ get_course_participants <- function(course_title) {
   get_all_users() |>
     dplyr::filter(stringr::str_detect(email, "rfortherestofus.com", negate = TRUE)) |>
     dplyr::mutate(courses = stringr::str_replace_all(courses, "[^a-zA-Z0-9\\-,]", "")) |>
-    dplyr::filter(courses %in% get_course_ids(course_title)) |>
+    dplyr::filter(stringr::str_detect(courses, get_course_ids(course_title))) |>
     dplyr::mutate(last_loggedin = lubridate::as_date(last_login)) |>
     tidyr::separate_wider_delim(state, names = c("country2", "state"), delim = "-") |>
     dplyr::select(-country2) |>
