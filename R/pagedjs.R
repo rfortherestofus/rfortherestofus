@@ -5,20 +5,20 @@
 #' If the input file (`file_path`) is a Quarto document, it first generate the HTML and
 #' then convert it to PDF. There also is an option to remove ot not the intermediate file.
 #'
-#' @name html_to_pdf
-#' @param file_path A character string specifying the path to the file in the GitHub repository.
+#' @name render_pagedjs_pdf
+#' @param file_path A character string specifying the path to the HTML file or Quarto document
 #' @param dest_path A character string specifying the destination directory where the file will be saved. Default to `file_path` (using `.pdf` instead of `.html`)
 #' @param delete_html_if_quarto Whether to delete the intermediate html file is `file_path` is a Quarto document. Default to `TRUE`.
 #' @export
 #' @examples
 #' \dontrun{
-#' html_to_pdf("file.html")
-#' html_to_pdf("file.html", "output.pdf")
-#' html_to_pdf("file.qmd")
-#' html_to_pdf("file.qmd", "output.pdf")
-#' html_to_pdf("file.qmd", "output.pdf", delete_html_if_quarto = FALSE)
+#' render_pagedjs_pdf("file.html")
+#' render_pagedjs_pdf("file.html", "output.pdf")
+#' render_pagedjs_pdf("file.qmd")
+#' render_pagedjs_pdf("file.qmd", "output.pdf")
+#' render_pagedjs_pdf("file.qmd", "output.pdf", delete_html_if_quarto = FALSE)
 #' }
-html_to_pdf <- function(
+render_pagedjs_pdf <- function(
     file_path,
     dest_path = NULL,
     delete_html_if_quarto = TRUE
