@@ -49,10 +49,10 @@ download_file <- function(file_path, dest_path, verbose = FALSE) {
 #'
 #' @name get_files
 #' @param pattern A character string specifying the pattern to match file names.
-#' @param dir A character string specifying the directory in the GitHub repository to search. Default is `"data-clean"`.
+#' @param dir A character string specifying the directory in the GitHub repository to search. Default is `"data-clean/"`.
 #' @return A character vector of file paths that match the pattern, or an error if the directory listing fails.
 #' @export
-get_files <- function(pattern, dir = "data-clean") {
+get_files <- function(pattern, dir = "data-clean/") {
     pattern <- paste0(dir, pattern)
 
     dir_contents <- tryCatch(
