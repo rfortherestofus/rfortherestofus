@@ -4,12 +4,12 @@
 \alias{get_files}
 \title{Get a list of files matching a pattern from a GitHub repository}
 \usage{
-get_files(pattern, dir = "_targets/objects/")
+get_files(pattern, dir = "data-clean/")
 }
 \arguments{
 \item{pattern}{A character string specifying the pattern to match file names.}
 
-\item{dir}{A character string specifying the directory in the GitHub repository to search. Default is \code{"_targets/objects/"}.}
+\item{dir}{A character string specifying the directory in the GitHub repository to search. Default is \code{"data-clean/"}.}
 }
 \value{
 A character vector of file paths that match the pattern, or an error if the directory listing fails.

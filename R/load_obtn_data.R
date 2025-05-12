@@ -114,12 +114,16 @@ load_obtn_data <- function(
     }
 
     df <- purrr::map_dfr(
-        list.files(
-            dest_path,
-            pattern = pattern,
-            full.names = TRUE
-        ),
-        qs::qread
+        list.files(dest_path, pattern = pattern, full.names = TRUE),
+        function(file) {
+            obj <- qs::qread(file)
+            # If it's a list of one element (e.g., list(data_alice = <df>)), extract the first element
+            if (is.list(obj) && length(obj) == 1 && is.data.frame(obj[[1]])) {
+                return(obj[[1]])
+            } else {
+                return(obj)
+            }
+        }
     )
 
     if (delete_temp_dir) {
