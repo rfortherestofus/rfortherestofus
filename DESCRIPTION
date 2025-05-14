@@ -44,3 +44,6 @@ Imports:
 URL: https://rfortherestofus.github.io/rfortherestofus/
 Remotes: 
     rfortherestofus/statamicr
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
