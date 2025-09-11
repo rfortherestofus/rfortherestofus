@@ -1,3 +1,34 @@
+#' @title Create or overwrite an air.toml configuration file
+#'
+#' @description Generates an `air.toml` or `.air.toml` configuration file with formatting
+#' options for the `air` code formatter. By default, writes a new file unless
+#' `overwrite = TRUE` is specified.
+#'
+#' @param line_width Integer. Maximum line width. Default is `80`.
+#' @param indent_width Integer or character. Indentation width. If character, it
+#'   will be wrapped in quotes. Default is `2`.
+#' @param indent_style Character. Indentation style, either `"space"` or `"tab"`.
+#'   Default is `"space"`.
+#' @param line_ending Character. Line ending style. Can be `"auto"`, `"lf"`,
+#'   `"crlf"`, or `"cr"`. Default is `"auto"`.
+#' @param persistent_line_breaks Character (`"true"` or `"false"`). Whether to
+#'   preserve existing line breaks. Default is `"true"`.
+#' @param exclude Character. TOML array of paths/patterns to exclude. Default is `"[]"`.
+#' @param default_exclude Character (`"true"` or `"false"`). Whether to use
+#'   default exclusion rules. Default is `"true"`.
+#' @param skip Character. TOML array of paths/patterns to skip. Default is `"[]"`.
+#' @param file_name Character. Name of the configuration file. Must be
+#'   `"air.toml"` or `".air.toml"`. Default is `"air.toml"`.
+#' @param overwrite Logical. Whether to overwrite an existing file. Default is `FALSE`.
+#'
+#' @examples
+#' \dontrun{
+#' use_air_toml()
+#'
+#' use_air_toml(overwrite=TRUE)
+#' }
+#'
+#' @export
 use_air_toml <- function(
     line_width = 80,
     indent_width = 2,
