@@ -48,6 +48,8 @@ default exclusion rules. Default is \code{"true"}.}
 Generates an \code{air.toml} or \code{.air.toml} configuration file with formatting
 options for the \code{air} code formatter. By default, writes a new file unless
 \code{overwrite = TRUE} is specified.
+
+Install R for your editor \href{https://posit-dev.github.io/air/editors.html}{here}.
 }
 \examples{
 \dontrun{

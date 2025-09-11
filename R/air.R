@@ -4,6 +4,8 @@
 #' options for the `air` code formatter. By default, writes a new file unless
 #' `overwrite = TRUE` is specified.
 #'
+#' Install R for your editor [here](https://posit-dev.github.io/air/editors.html).
+#'
 #' @param line_width Integer. Maximum line width. Default is `80`.
 #' @param indent_width Integer or character. Indentation width. If character, it
 #'   will be wrapped in quotes. Default is `2`.
