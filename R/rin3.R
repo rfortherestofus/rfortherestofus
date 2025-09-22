@@ -26,24 +26,24 @@ get_all_users <- function() {
 
 #' Get course ids
 #'
-#' @param course_title Title of course (or string to find multiple courses such as "R in 3 Months")
+#' @param course_title Title of course
 #'
-#' @returns ids of courses
+#' @returns ids of course
 get_course_ids <- function(course_title) {
   statamicr::get_collection_list(
     "https://rfortherestofus.com",
     "courses",
     token = Sys.getenv("STATAMIC_TOKEN")
   ) |>
-    dplyr::filter(stringr::str_detect(title, stringr::str_escape(course_title))) |>
+    dplyr::filter(title == course_title) |>
     dplyr::pull(id)
 }
 
-#' Get all participants in a course or courses
+#' Get all participants in a course
 #'
-#' @param course_title Title of course (or string to find multiple courses such as "R in 3 Months")
+#' @param course_title Title of course
 #'
-#' @returns All participants in course(s)
+#' @returns All participants in course
 #' @export
 get_course_participants <- function(course_title) {
   get_all_users() |>
@@ -72,7 +72,7 @@ get_course_participants <- function(course_title) {
 
 #' Post participants in a course or courses to a Google Sheet
 #'
-#' @param course_title Title of course (or string to find multiple courses such as "R in 3 Months")
+#' @param course_title Title of course
 #' @param google_sheets_url URL of Google Sheet to post to
 #' @param sheet_name Name of sheet to post to
 #' @param view_sheet Whether to open sheet in browser (TRUE by default)
