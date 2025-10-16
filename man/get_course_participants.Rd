@@ -2,16 +2,16 @@
 % Please edit documentation in R/rin3.R
 \name{get_course_participants}
 \alias{get_course_participants}
-\title{Get all participants in a course or courses}
+\title{Get all participants in a course}
 \usage{
 get_course_participants(course_title)
 }
 \arguments{
-\item{course_title}{Title of course (or string to find multiple courses such as "R in 3 Months")}
+\item{course_title}{Title of course}
 }
 \value{
-All participants in course(s)
+All participants in course
 }
 \description{
-Get all participants in a course or courses
+Get all participants in a course
 }

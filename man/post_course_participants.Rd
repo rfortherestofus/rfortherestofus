@@ -12,7 +12,7 @@ post_course_participants(
 )
 }
 \arguments{
-\item{course_title}{Title of course (or string to find multiple courses such as "R in 3 Months")}
+\item{course_title}{Title of course}
 
 \item{google_sheets_url}{URL of Google Sheet to post to}
 
