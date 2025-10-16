@@ -3,5 +3,5 @@ gh::gh(
   owner = "rfortherestofus",
   repo = "proposal-template",
   path = "_extensions/proposal-template/_extension.yml",
-  .token = gh_token()
+  .token = gh::gh_token()
 )
