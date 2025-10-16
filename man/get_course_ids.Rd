@@ -7,10 +7,10 @@
 get_course_ids(course_title)
 }
 \arguments{
-\item{course_title}{Title of course (or string to find multiple courses such as "R in 3 Months")}
+\item{course_title}{Title of course}
 }
 \value{
-ids of courses
+ids of course
 }
 \description{
 Get course ids
