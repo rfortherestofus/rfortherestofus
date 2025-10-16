@@ -24,7 +24,7 @@
 #' }
 #'
 #' @export
-rfor_table <- function(
+rfortherestofus_table <- function(
   data,
   base_font = "Inter",
   base_font_size = 12,
