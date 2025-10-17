@@ -46,6 +46,7 @@ create_new_proposal <- function(dir) {
 
   root_files <- c(
     "asset-background.svg",
+    "asset-background.png",
     # "asset-chart.png",
     # "asset-dollar.png",
     # "asset-workflow.png",
