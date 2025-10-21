@@ -45,13 +45,15 @@ create_new_proposal <- function(dir) {
   }
 
   root_files <- c(
-    "asset-background.svg",
-    "asset-background.png",
+    "asset-background-rfor.svg",
+    "asset-background-rfor.png",
+    "asset-background-cds.svg",
+    "rfortherestofus-logo.png",
+    "cds-logo.svg",
+    "template.qmd"
     # "asset-chart.png",
     # "asset-dollar.png",
-    # "asset-workflow.png",
-    "rfortherestofus-logo.png",
-    "template.qmd"
+    # "asset-workflow.png"
   )
   download_files("", root_files, dir)
 
