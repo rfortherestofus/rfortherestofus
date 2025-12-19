@@ -4,6 +4,10 @@
 #'
 #' @return data frame with race/ethnicity data
 #' @export
+#' @examples
+#' \dontrun{
+#' get_acs_race_ethnicity("state")
+#' }
 get_acs_race_ethnicity <- function(...) {
   tidycensus::get_acs(
     ...,
