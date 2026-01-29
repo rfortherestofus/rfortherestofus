@@ -47,11 +47,21 @@ get_course_ids <- function(course_title) {
 #' @export
 get_course_participants <- function(course_title) {
   get_all_users() |>
-    dplyr::filter(stringr::str_detect(email, "rfortherestofus.com", negate = TRUE)) |>
-    dplyr::mutate(courses = stringr::str_replace_all(courses, "[^a-zA-Z0-9\\-,]", "")) |>
+    dplyr::filter(stringr::str_detect(
+      email,
+      "rfortherestofus.com",
+      negate = TRUE
+    )) |>
+    dplyr::mutate(
+      courses = stringr::str_replace_all(courses, "[^a-zA-Z0-9\\-,]", "")
+    ) |>
     dplyr::filter(stringr::str_detect(courses, get_course_ids(course_title))) |>
     dplyr::mutate(last_loggedin = lubridate::as_date(last_login)) |>
-    tidyr::separate_wider_delim(state, names = c("country2", "state"), delim = "-") |>
+    tidyr::separate_wider_delim(
+      state,
+      names = c("country2", "state"),
+      delim = "-"
+    ) |>
     dplyr::select(-country2) |>
     dplyr::mutate(state = stringr::str_to_upper(state)) |>
     dplyr::mutate(city = stringr::str_to_title(city)) |>
@@ -79,7 +89,12 @@ get_course_participants <- function(course_title) {
 #'
 #' @returns Posts participant info to Google Sheet
 #' @export
-post_course_participants <- function(course_title, google_sheets_url, sheet_name, view_sheet = TRUE) {
+post_course_participants <- function(
+  course_title,
+  google_sheets_url,
+  sheet_name,
+  view_sheet = TRUE
+) {
   googlesheets4::gs4_auth(email = Sys.getenv("GOOGLE_SHEETS_EMAIL"))
 
   get_course_participants(course_title) |>
@@ -100,7 +115,9 @@ post_course_participants <- function(course_title, google_sheets_url, sheet_name
       sheet = sheet_name
     )
 
-  cli::cli_alert_success(stringr::str_glue("Participant info posted at {google_sheets_url}"))
+  cli::cli_alert_success(stringr::str_glue(
+    "Participant info posted at {google_sheets_url}"
+  ))
 
   if (view_sheet == TRUE) {
     browseURL(google_sheets_url)
