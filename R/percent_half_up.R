@@ -19,7 +19,9 @@ number_half_up <-
     trim = TRUE,
     ...
   ) {
-    if (length(x) == 0) return(character())
+    if (length(x) == 0) {
+      return(character())
+    }
     accuracy <- accuracy %||% precision(x * scale)
     # change here
     x <- round_any(x, accuracy / scale, f = janitor::round_half_up)
