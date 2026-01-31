@@ -4,6 +4,7 @@ agent_sections <- list(
 General coding rules to follow for the R programming language:
 - Always use the tidyverse (dplyr, ggplot2, tibble...) unless explicitly asked not to.
 - Always add a `library(<pkg_name>)` at the top of the file.
+- Always use the native pipe operator: |>.
 - For less common packages, give installation instructions using `pak`: `pak::pkg_install()`.
 - Make the code as consistent as possible
 - Avoid as much as reasonnable code dupplications
@@ -25,7 +26,55 @@ Quarto document coding rules:
 - Set global chunk options in the YAML header under `execute:`
 - Test rendering with `quarto render`
 - For pdf rendering, always use Typst with `format: typst`.
-- Do not rewrite narrative text unless explicitly asked or grammatical errors."
+- Do not rewrite narrative text unless explicitly asked or grammatical errors.",
+  Typst = "
+Typst document coding rules:
+- Minimize code dupplication by defining reusable functions. Usage is like this:
+
+```typ
+#let top-of-page(title, image-path, image-alt) = {
+  stack(
+    dir: ltr, // left to right
+    spacing: 1.5cm,
+    heading(title),
+    place(dy: -1cm, image(image-path, width: 4cm, alt: image-alt))
+  )
+}
+
+#top-of-page('Building a Clean Energy Future', 'images/logo-ipsum.svg', 'ipsum logo')
+#top-of-page('The Future is Cleaner and Cheaper', 'outputs/town-map.png', 'Town map')
+```
+- If we're inside a Quarto document (.qmd files), you can use R values with the following syntax:
+```typ
+#top-of-page('`r params$town` consectetur adipiscing elit', 'outputs/map.png', 'map')
+```
+Where params is a named list with the town key.
+
+- In Quarto, you can a typst code block like this:
+
+```{=typst}
+#top-of-page('Lorem', 'images/logo.svg', 'ipsum logo')
+#box(width: 75%)[Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.]
+```
+
+- For all common styling, use set and show rules, with the following syntax.
+  - Set rules define default behavior(s) of a given Typst function:
+```typ
+#set text(font: 'Google Sans', lang: 'en', region: 'US', size: 13pt)
+#set page(margin: (x: 2cm, y: 2cm))
+```
+  - Show rules let us define more complex set rules:
+```typ
+#show heading: it => {
+  set text(size: 25pt, fill: rgb('#8FB070'))
+  box(width: 75%)[#it.body]
+}
+```
+This changes all heading to be green, 25pt size and inside a box that spans 75% of the current container.
+- Remember that Typst has 2 modes: markup (default, what you see most of the time) and code mode (for scripting and logic).
+You can find syntax information by reading this page (https://typst.app/docs/reference/styling/) and this page (https://typst.app/docs/reference/scripting/).
+- Make sure pdf outputs are accessible. In Typst, accessibility is done by always adding an alternative text in images (using the `alt` argument). Also, reading order of assistive technology is defined by the order the typst document is written, so make sure this one is coherent. If not defined, use colors with enough color contrast.
+"
 )
 
 #' @title Create or overwrite an AGENT.md configuration file
@@ -45,6 +94,7 @@ Quarto document coding rules:
 #' \dontrun{
 #' rfortherestofus::use_agent_md("R")              # just R rules
 #' rfortherestofus::use_agent_md("Quarto")         # just Quarto rules
+#' rfortherestofus::use_agent_md("Typst")          # just Typst rules
 #' rfortherestofus::use_agent_md(c("R", "Quarto")) # R and Quarto rules
 #' }
 #'
