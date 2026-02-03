@@ -131,8 +131,8 @@ palmerpenguins::penguins |>
   : RRU ggplot2 theme
 - [`upload_muse_video()`](https://rfortherestofus.github.io/rfortherestofus/reference/upload_muse_video.md)
   : Upload video to muse.ai
-- [`use_agent_md()`](https://rfortherestofus.github.io/rfortherestofus/reference/use_agent_md.md)
-  : Create or overwrite an AGENT.md configuration file
+- [`use_agents_md()`](https://rfortherestofus.github.io/rfortherestofus/reference/use_agents_md.md)
+  : Create or overwrite an AGENTS.md configuration file
 - [`use_air_toml()`](https://rfortherestofus.github.io/rfortherestofus/reference/use_air_toml.md)
   : Create or overwrite an air.toml configuration file
 - [`view_acs_variables()`](https://rfortherestofus.github.io/rfortherestofus/reference/view_acs_variables.md)
