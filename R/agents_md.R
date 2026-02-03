@@ -87,7 +87,7 @@ You can find syntax information by reading this page (https://typst.app/docs/ref
 #' other interface.
 #'
 #' @param sections Character vector with sections to add in the `AGENTS.md`. Possible
-#' values are "R" and "Quarto".
+#' values are "R", "Quarto", "Typst".
 #' @param overwrite Logical. Whether to overwrite an existing file. Default is `FALSE`.
 #'
 #' @examples
